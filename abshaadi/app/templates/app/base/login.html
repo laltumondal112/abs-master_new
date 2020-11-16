@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href='{% static "custom_files/css/login.css" %}' rel='stylesheet' type='text/css'>
+		<title>Atut Bandhan Shaadi.com || Hum Bandhan Nahi Sambandh Banate Hai.</title>
+		
+		<style>
+		
+			h2.wow{
+				display: block;
+				color: #fff;
+				font-weight: 400;
+				font-size: 40px;
+				margin: 0;
+				text-shadow: 2px 2px #635454;
+			}
+			
+			p.wow{
+				display: block;
+				color: #fff;
+				font-weight: 400;
+				font-size: 15px;
+				margin: 0;
+			}
+		
+		</style>
+		
+	</head>
+	<body style="background-image: url({% static 'assets/images/sliders/1.jpg' %}); background-size: cover;">
+		<div class="container-fluid" style="background-color:#2ca0f1; padding:10px; color:#FFFFFF; font-family: 'Alex Brush', cursive;font-weight: 300; font-size: 20px;">
+			abshaadi.com
+		</div>
+		
+		<!-- Login Form -->
+		
+		<div class="container-fluid" style="padding-top:20px;" id="login_form">
+			<div class="col-md-1"></div>
+			<div class="col-md-10" style="background-color:#2ca3f15c">
+				<div class="col-md-8" style="padding:20px 10px;">
+					<div class="col-md-12 text-center" style="background-color:#2ca0f1e6; padding-top:20px;">
+						<h2 class="wow">Atut Bandhan Shaadi</h2>
+						<p class="wow" style="margin-bottom:20px;">Hum Bandhan Nahi Sambandh Banate Hai</p>
+						<p style="line-height: 30px; font-size: 18px; color: #FFF; font-family: none;">We offer trusted & authentic matrimonial profiles for those who are looking 
+						for Indian brides and grooms for marriage. We understands the importance of choosing 
+						the right partner for marriage, especially in the Indian cultural setup. It believes in 
+						providing the most secure and convenient matchmaking experience to all its members by 
+						ensuring 100% screening,exclusive privacy options, photo protection features and verification 
+						of phone numbers and more information.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h1 style="font-family:none; font-weight: 300; font-size: 30px; text-align:center; color:#FFF;">Login</h1>
+										
+					<form action="" id="lg-form" name="lg-form" method="post">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="username">Username:</label>
+							<input type="text" name="username" id="username" placeholder="username"/>
+						</div>
+
+						<div class="form-group">
+							<label for="password">Password:</label>
+							<input type="password" name="password" id="password" placeholder="password" />
+						</div>
+						
+						{% if messages %}
+							<div class="bg-danger text-center" style="padding:10px;">
+								<ul class="messages" style="padding:0px; margin:0px;">
+									{% for message in messages %}
+										<li style="list-style:none" class="{{ message.tags }}">{{ message }}</li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
+						
+						<div class="form-group" style="text-align:right; margin-right:10px; font-family:none;">
+							<a href="" style="color:#FFF; text-decoration:none; font-weight:400;letter-spacing: 1px">Forgot password</a>
+						</div>
+						
+						<div style="text-align:center">
+							<button style="width:100px; background-color:#86ff64" class="btn" type="submit" id="login">Login</button>
+							<a style="width:100px; background-color:#FFCCFF" class="btn" href="{% url 'registration' %}">Register</a>
+						</div>				
+					</form>
+					<div id="message"></div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Scripts -->
+		
+		<script src="{% static 'base_files/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+		<script src="{% static 'custom_files/js/common.js' %}"></script>		
+	</body>	
+</html>

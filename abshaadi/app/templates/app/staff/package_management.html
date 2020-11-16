@@ -1,0 +1,47 @@
+<div class="row">
+
+	<div class="col">
+		<div class="card-header card-header-blue card-header-border">
+			<strong>Package Information</strong>
+			<button data-toggle="modal" data-target="#add_package_form" style="width:80px; float:right; margin-right:-16px; margin-top:-8px;" class="btn btn-info">
+				<i class="mdi mdi-plus"></i> Add 
+			</button>
+		</div>
+		<div class="card-body" style="padding-top:10px; background:none;">
+			<table class="table table-bordered" style="margin:0px; padding:0px;">
+				<tr class="text-center"  style="font-weight:bold; background-color:#ae62e8; color:#FFFFFF;">
+					<td>Package Name</td>
+					<td>Description</td>
+					<td>Price</td>
+					<td>Tenure</td>
+					<td>Tenure Type</td>
+					<td>Is Active</td>
+					<td>Action</td>
+				<tr>
+				
+				{% for package in packages %}
+				<tr style="font-size:12px;  background-color:#FFF">
+					<td style="padding:5px">{{ package.package_name }}</td>
+					<td style="padding:5px">{{ package.description }}</td>
+					<td style="padding:5px">{{ package.value }}</td>
+					<td style="padding:5px">{{ package.tenure }}</td>
+					<td style="padding:5px">{{ package.tenure_types }}</td>
+					<td style="padding:5px" class="text-center">
+						{% if package.tenure_types == True %}
+						Yes
+						{% elif package.tenure_types == False %}
+						No
+						{% endif %}
+					</td>
+					<td style="padding:5px" class="text-center">
+						<i class="mdi mdi-pencil" data-toggle="modal"  data-target="#edit_package_model-{{forloop.counter}}"></i>
+						<a href="{% url 'delete_package_management' package.id %}"><i class="mdi mdi-delete" style="color:#FF0000"></i></a>
+					</td>
+				<tr>
+				{% endfor %}
+			</table>
+		</div>
+    </div>
+</div>    
+
+{% include 'app/modal_forms/add_package_modal.html' %}

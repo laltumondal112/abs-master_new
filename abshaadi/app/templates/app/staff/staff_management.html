@@ -1,0 +1,51 @@
+{% load static %}
+{% load common_filters %}
+<div class="row">
+
+	<div class="col">
+		<div class="card-header card-header-blue card-header-border">
+			<strong>Staff Information</strong>
+			<button data-toggle="modal" data-target="#add_staff_form" style="width:80px; float:right; margin-right:-16px; margin-top:-8px;" class="btn btn-info">
+				<i class="mdi mdi-plus"></i> Add 
+			</button>
+		</div>
+		<div class="card-body" style="padding-top:10px; background:none;">
+			<table class="table table-bordered" style="margin:0px; padding:0px;">
+				<tr class="text-center"  style="font-weight:bold; background-color:#ae62e8; color:#FFFFFF;">
+					<td>Username</td>
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>Is Active</td>
+					<td>Is Superuser</td>
+					<td>Is Staff</td>
+					<td>Action</td>
+				<tr>
+				{% for row in users %}
+					<tr style="font-size:12px;  background-color:#FFF">
+						<td style="padding:5px; line-height: 22px;">{{ row.email }}</td>
+						<td style="padding:5px; line-height: 22px;">{{ row.first_name }}</td>
+                        <td style="padding:5px; line-height: 22px;">{{ row.last_name }}</td>
+						<td style="padding:5px; line-height: 22px; text-align:center;">{% tick_mark row.is_active %}</td>
+						<td style="padding:5px; line-height: 22px; text-align:center;">{% tick_mark row.is_superuser %}</td>
+						<td style="padding:5px; line-height: 22px; text-align:center;">{% tick_mark user.is_staff %}</td>
+						<td style="padding:5px; text-align:center;">
+							<i class="mdi mdi-pencil" style="margin-right:15px; cursor:pointer; font-size:12px;"></i>
+							<i class="mdi mdi-delete" onclick="delete_user({{row.id}})" style="cursor:pointer; color:#FF0000; font-size:15px;"></i>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+    </div>
+</div>
+
+
+{% include 'app/base/uploader_gif_modals.html' %}
+
+{% include 'app/modal_forms/staff_modal.html' %}
+
+<script>
+
+var csrfmiddlewaretoken = '{{ csrf_token }}';
+
+</script>

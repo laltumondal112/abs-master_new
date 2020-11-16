@@ -1,0 +1,256 @@
+<style>
+	.icons{
+		font-size: 30px;
+		color: #FFFFFF;
+		position: relative;
+		top: 5px;
+	}
+		
+	.icons-counter{
+		font-size: 15px;
+		color: #FFFFFF;
+		text-align: center;
+		display: block;		
+		line-height: 4px;		
+		padding-bottom: 14px;
+	}
+	
+	.icons-title{
+		font-size: small;
+		color: #FFFFFF;
+		display: block;
+		line-height: 30px;
+		font-size: 14px;
+		text-align: center;
+		padding: 5px 10px;
+	}
+	
+	
+	.earnings-icons{
+		font-size: 40px;
+		color: #FFFFFF;
+	}
+	
+	.earnings-icons-counter{
+		font-size: 15px;
+		color: #FFFFFF;
+		text-align: center;
+		display: block;
+		line-height: 4px;
+	}
+	
+	.earnings-icons-title{
+		font-weight: bold;
+		color: #FFFFFF;
+		display: block;
+		line-height: 30px;
+		font-size: 12px;
+		text-align: center;
+		padding: 5px 10px;
+	}
+	
+	
+	.bg-earnings{
+		background-color: #8cde17!important;
+	}
+	
+	.bg-earnings-icon{
+		background-color: #6dc504!important
+	}
+	
+	.bg-pink{
+		background-color: #ef05cc!important;
+	}
+	
+	.bg-pink-light{
+		background-color: #ef05ccab!important;
+	}
+	
+	.bg-male{
+		background-color: #b707e8!important;
+	}
+	
+	.bg-male-light{
+		background-color: #b707e8ab!important;
+	}
+	
+	.bg-primary-light{
+		background-color: #7460eeab!important;
+	}
+	
+	.bg-warning-light{
+		background-color: #ffb848ab!important;
+	}
+	
+	.bg-success-light{
+		background-color: #28b779ab!important;
+	}
+	
+	.bg-danger-light{
+		background-color: #da542eab!important;
+	}
+	
+	.bg-grey{
+		background-color: #eeeeee!important;
+	}
+	
+	.sidetabs{
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+	}
+	
+	.sidetabs li{
+		padding: 10px 5px;
+		border-bottom: 1px solid #ccc;	
+		cursor: pointer;
+		font-weight: bold;
+	}
+	
+	.sidetabs li.active{
+		background-color: #ced2d4 !important;
+		font-weight: bold;
+		color: #FFFFFF;
+	}
+	
+	.sidetab-col-left{
+		border-left: 1px solid #ccc;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		padding:0px;
+	}
+	
+	.sidetab-col-right{
+		border: 1px solid #ccc;
+		padding: 0px;
+		background-color: #FFFFFF;
+	}
+	
+	.card-header-border{
+		border-top: 1px solid #d9d9de;
+		border-left: 1px solid #d9d9de;
+		border-right: 1px solid #d9d9de;
+	}
+	
+	.card-body-border{
+		border: 1px solid #d9d9de;
+	}
+	
+	.card-body{
+		padding: 0px;
+	}
+	
+	ul.ul{
+		margin: 15px 0px 0px 10px;
+		padding: 0px;
+	}
+	
+	ul.ul li{
+		list-style-type: none;
+		padding: 0px 10px;
+		line-height: 25px;
+	}
+	
+	.card-header-blue{
+		background: #2ca0f1;
+		color: #FFFFFF;
+	}
+	
+	.card-body{
+		background-color: #FFF;
+	}
+	
+	.modal-header{
+		background-color: #c4f4fb;
+	}
+	
+	label.cabinet{
+		display: block;
+		cursor: pointer;
+		margin-bottom: 0px;
+		padding-bottom: 0px;
+	}
+
+	label.cabinet input.file{
+		position: relative;
+		height: 0px;
+		width: 0px;
+		opacity: 0;
+		-moz-opacity: 0;
+		filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+		margin-top:-30px;
+	}
+
+	#upload-demo{
+		height: 185px;
+		padding-bottom:25px;
+	}
+	
+	.gambar{
+		height: 162px;
+		width: 162px;
+	}
+	
+	.image-span{
+		position: absolute;
+		right: 39px;
+		top: 2px;
+		font-size: x-large;
+		color: #EEE;
+	}
+	
+	.special {
+		font-weight: bold !important;
+		color: #fff !important;
+		background: #2255a4 !important;
+		text-transform: uppercase;
+	}
+
+
+	.bg-red{
+		color: #fff !important;
+		background-color : #ff0000ba;
+		border-color : transparent;
+	}
+	
+	.bg-green{
+		color: #000 !important;
+		background-color : #5aef3094;
+		border-color : transparent !important;
+	}
+	
+	.bg-deactive{
+		color: #fff !important;
+		background-color : #011f25;
+		border-color : transparent !important;
+	}
+	
+	.bg-grey-light{
+		background-color : #e3e8e194;
+		border-color : transparent !important;
+	}
+	
+	.bg-dark-green{		
+		color: #fff !important;
+		background-color : #50ca18;
+		border-color : transparent !important;
+	}
+	
+	.bg-dark-red{
+		color: #fff !important;
+		background-color : #ff4848;
+		border-color : transparent !important;
+	}
+	
+	p.after-sel::before{
+		height : 10px;
+		width : 200px;
+		background-color : #FF0000;
+		content: "";
+		display: inline-block;
+	}
+	
+	
+	
+</style>

@@ -1,0 +1,249 @@
+id,country_name,is_active
+1,Afghanistan,1
+2,Aland Islands,1
+3,Albania,1
+4,Algeria,1
+5,American Samoa,1
+6,Andorra,1
+7,Angola,1
+8,Anguilla,1
+9,Antarctica,1
+10,Antigua And Barbuda,1
+11,Argentina,1
+12,Armenia,1
+13,Aruba,1
+14,Australia,1
+15,Austria,1
+16,Azerbaijan,1
+17,Bahamas The,1
+18,Bahrain,1
+19,Bangladesh,1
+20,Barbados,1
+21,Belarus,1
+22,Belgium,1
+23,Belize,1
+24,Benin,1
+25,Bermuda,1
+26,Bhutan,1
+27,Bolivia,1
+28,Bosnia and Herzegovina,1
+29,Botswana,1
+30,Bouvet Island,1
+31,Brazil,1
+32,British Indian Ocean Territory,1
+33,Brunei,1
+34,Bulgaria,1
+35,Burkina Faso,1
+36,Burundi,1
+37,Cambodia,1
+38,Cameroon,1
+39,Canada,1
+40,Cape Verde,1
+41,Cayman Islands,1
+42,Central African Republic,1
+43,Chad,1
+44,Chile,1
+45,China,1
+46,Christmas Island,1
+47,Cocos (Keeling) Islands,1
+48,Colombia,1
+49,Comoros,1
+50,Congo,1
+51,Congo The Democratic Republic Of The,1
+52,Cook Islands,1
+53,Costa Rica,1
+54,Cote D'Ivoire (Ivory Coast),1
+55,Croatia (Hrvatska),1
+56,Cuba,1
+57,Cyprus,1
+58,Czech Republic,1
+59,Denmark,1
+60,Djibouti,1
+61,Dominica,1
+62,Dominican Republic,1
+63,East Timor,1
+64,Ecuador,1
+65,Egypt,1
+66,El Salvador,1
+67,Equatorial Guinea,1
+68,Eritrea,1
+69,Estonia,1
+70,Ethiopia,1
+71,Falkland Islands,1
+72,Faroe Islands,1
+73,Fiji Islands,1
+74,Finland,1
+75,France,1
+76,French Guiana,1
+77,French Polynesia,1
+78,French Southern Territories,1
+79,Gabon,1
+80,Gambia The,1
+81,Georgia,1
+82,Germany,1
+83,Ghana,1
+84,Gibraltar,1
+85,Greece,1
+86,Greenland,1
+87,Grenada,1
+88,Guadeloupe,1
+89,Guam,1
+90,Guatemala,1
+91,Guernsey and Alderney,1
+92,Guinea,1
+93,Guinea-Bissau,1
+94,Guyana,1
+95,Haiti,1
+96,Heard and McDonald Islands,1
+97,Honduras,1
+98,Hong Kong S.A.R.,1
+99,Hungary,1
+100,Iceland,1
+101,India,1
+102,Indonesia,1
+103,Iran,1
+104,Iraq,1
+105,Ireland,1
+106,Israel,1
+107,Italy,1
+108,Jamaica,1
+109,Japan,1
+110,Jersey,1
+111,Jordan,1
+112,Kazakhstan,1
+113,Kenya,1
+114,Kiribati,1
+115,Korea North,1
+116,Korea South,1
+117,Kosovo,1
+118,Kuwait,1
+119,Kyrgyzstan,1
+120,Laos,1
+121,Latvia,1
+122,Lebanon,1
+123,Lesotho,1
+124,Liberia,1
+125,Libya,1
+126,Liechtenstein,1
+127,Lithuania,1
+128,Luxembourg,1
+129,Macau S.A.R.,1
+130,Macedonia,1
+131,Madagascar,1
+132,Malawi,1
+133,Malaysia,1
+134,Maldives,1
+135,Mali,1
+136,Malta,1
+137,Man (Isle of),1
+138,Marshall Islands,1
+139,Martinique,1
+140,Mauritania,1
+141,Mauritius,1
+142,Mayotte,1
+143,Mexico,1
+144,Micronesia,1
+145,Moldova,1
+146,Monaco,1
+147,Mongolia,1
+148,Montenegro,1
+149,Montserrat,1
+150,Morocco,1
+151,Mozambique,1
+152,Myanmar,1
+153,Namibia,1
+154,Nauru,1
+155,Nepal,1
+156,Netherlands Antilles,1
+157,Netherlands The,1
+158,New Caledonia,1
+159,New Zealand,1
+160,Nicaragua,1
+161,Niger,1
+162,Nigeria,1
+163,Niue,1
+164,Norfolk Island,1
+165,Northern Mariana Islands,1
+166,Norway,1
+167,Oman,1
+168,Pakistan,1
+169,Palau,1
+170,Palestinian Territory Occupied,1
+171,Panama,1
+172,Papua new Guinea,1
+173,Paraguay,1
+174,Peru,1
+175,Philippines,1
+176,Pitcairn Island,1
+177,Poland,1
+178,Portugal,1
+179,Puerto Rico,1
+180,Qatar,1
+181,Reunion,1
+182,Romania,1
+183,Russia,1
+184,Rwanda,1
+185,Saint Helena,1
+186,Saint Kitts And Nevis,1
+187,Saint Lucia,1
+188,Saint Pierre and Miquelon,1
+189,Saint Vincent And The Grenadines,1
+190,Saint-Barthelemy,1
+191,Saint-Martin (French part),1
+192,Samoa,1
+193,San Marino,1
+194,Sao Tome and Principe,1
+195,Saudi Arabia,1
+196,Senegal,1
+197,Serbia,1
+198,Seychelles,1
+199,Sierra Leone,1
+200,Singapore,1
+201,Slovakia,1
+202,Slovenia,1
+203,Solomon Islands,1
+204,Somalia,1
+205,South Africa,1
+206,South Georgia,1
+207,South Sudan,1
+208,Spain,1
+209,Sri Lanka,1
+210,Sudan,1
+211,Suriname,1
+212,Svalbard And Jan Mayen Islands,1
+213,Swaziland,1
+214,Sweden,1
+215,Switzerland,1
+216,Syria,1
+217,Taiwan,1
+218,Tajikistan,1
+219,Tanzania,1
+220,Thailand,1
+221,Togo,1
+222,Tokelau,1
+223,Tonga,1
+224,Trinidad And Tobago,1
+225,Tunisia,1
+226,Turkey,1
+227,Turkmenistan,1
+228,Turks And Caicos Islands,1
+229,Tuvalu,1
+230,Uganda,1
+231,Ukraine,1
+232,United Arab Emirates,1
+233,United Kingdom,1
+234,United States,1
+235,United States Minor Outlying Islands,1
+236,Uruguay,1
+237,Uzbekistan,1
+238,Vanuatu,1
+239,Vatican City State (Holy See),1
+240,Venezuela,1
+241,Vietnam,1
+242,Virgin Islands (British),1
+243,Virgin Islands (US),1
+244,Wallis And Futuna Islands,1
+245,Western Sahara,1
+246,Yemen,1
+247,Zambia,1
+248,Zimbabwe,1

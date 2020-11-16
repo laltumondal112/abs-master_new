@@ -1,0 +1,71 @@
+{% load static %}
+{% load common_filters %}
+<div class="row">
+
+	<div class="col">
+		<div class="card-header card-header-blue card-header-border">
+			<strong>Religion & Caste Information</strong>
+			<button data-toggle="modal" data-target="#add_caste_form_modal" style="float:right; margin-right:-16px;  margin-top:-8px;" class="btn btn-info">
+				<i class="mdi mdi-plus"></i> Add Caste
+			</button>
+			<button data-toggle="modal" data-target="#add_religion_form_modal" style="float:right; margin-right:5px;  margin-top:-8px;" class="btn btn-info">
+				<i class="mdi mdi-plus"></i> Add Religion
+			</button>
+			<button style="float:right; margin-right:5px;  margin-top:-8px;" class="btn btn-warning" onclick="start_religion_auto_renew()">
+				<i class="mdi mdi-backup-restore"></i> Restore
+			</button>
+			
+		</div>
+		<div class="card-body" style="padding-top:10px; background:none;">
+			<table class="table table-bordered" style="margin:0px; padding:0px;">
+				<tr class="text-center"  style="font-weight:bold; background-color:#ae62e8; color:#FFFFFF;">
+					<td>Religion</td>
+					<td>Caste/Denominations/Sects</td>
+					<td>Is Active</td>
+					<td>Action</td>
+				<tr>
+				{% for row, value in re_list.items %}
+					<tr style="font-size:12px;  background-color:#FFF">
+						<td style="padding:5px; line-height: 22px;">{{ value.name }}</td>
+						<td style="padding:5px; line-height: 22px;">
+							{% for caste in value.castes %}
+							
+								<div class="btn-group" style="margin:5px 5px;">
+									
+									{% if caste.1 %}
+										<span type="button" class="btn bg-grey-light" style="border-radius:0px;">{{ caste.3 }}</span>
+									{% else %}
+										<span type="button" class="btn bg-deactive" style="border-radius:0px;">{{ caste.3 }}</span>
+									{% endif %}
+									
+									<span type="button" class="btn btn-primary">
+										<i class="mdi mdi-pencil" style="margin-right:10px;" title="Edit"></i>
+										<a href="{% url 'delete_caste' caste.0 %} " style="text-decoration:none; color:#FFFFFF">
+											<i class="mdi mdi-delete" title="Delete"></i>
+										</a>
+									</span>
+								</div>	
+							
+							{% endfor %}
+						</td>
+						<td style="padding:5px; line-height: 22px; text-align:center; width:100px">{% tick_mark value.is_active %}</td>
+						<td style="padding:5px; text-align:center; width:80px">
+							<i class="mdi mdi-pencil" style="margin-right:15px; cursor:pointer; font-size:12px;"></i>
+							
+							<a href="{% url 'delete_religion' row %} " style="text-decoration:none; color:#FFFFFF">
+								<i class="mdi mdi-delete" style="cursor:pointer; color:#FF0000; font-size:15px;"></i>
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+    </div>
+</div>
+
+{% include 'app/base/uploader_gif_modals.html' %}
+{% include 'app/modal_forms/site_management_modal.html' %}
+
+<script>
+	var csrfmiddlewaretoken = '{{ csrf_token }}';
+</script>

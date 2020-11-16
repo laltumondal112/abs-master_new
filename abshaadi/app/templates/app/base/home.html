@@ -1,0 +1,859 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+    
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	
+	<!--Theme Title-->
+	<title>Atut Bandhan Shaadi.com || Hum Bandhan Nahi Sambandh Banate Hai.</title>
+	
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+	<link rel="apple-touch-icon" href="favicon.png">
+
+	<!-- All css Here -->
+	
+	<!-- All plugins css -->
+	<link rel="stylesheet" href="{% static '/assets/css/allplugins.css' %}">
+	
+	<!-- Style css -->
+	<link rel="stylesheet" href="{% static '/assets/style.css' %}">
+	
+	<!-- Responsive css -->
+	<link rel="stylesheet" href="{% static '/assets/css/responsive.css' %}">
+
+	<!-- Customization css -->
+	<!--If u need any change then use this css file-->
+	<link rel="stylesheet" href="{% static '/assets/css/custom.css' %}">
+	
+		
+	<!-- Modernizr JavaScript -->
+	<script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+	<style type="text/css">
+        html{scroll-behavior: smooth;}
+		
+		.count-circle{width: 100px;height: 100px;padding: 38px;border-radius: 50px;border: 1px solid;margin: auto;}
+		.btn1{background: #FF5722;}
+		
+		#muslimcast{display:none;}
+        
+		#Sikhcast{display:none;}
+        
+		#Anycast{display:none;}
+		
+		#lg-form > div {
+			margin:10px 5px;
+			padding:5px 0;
+		}
+		#lg-form label{
+			display: none;
+			font-size: 20px;
+			line-height: 25px;
+		}
+		#lg-form input[type="text"],
+		#lg-form input[type="password"]{
+			border:1px solid rgba(51,51,51,.5);
+			-webkit-border-radius:10px;
+			-moz-border-radius:10px;
+			padding: 5px;
+			font-size: 16px;
+			line-height: 20px;
+			width: 100%;
+			font-family: 'Oleo Script', cursive;
+			text-align:center;
+		}
+		#lg-form div:nth-child(3) {
+			text-align:center;
+		}
+
+		#message, #message2{width:100%;text-align:center}
+		.success {
+			color: green;
+		}
+		.error {
+			color: red;
+		}
+			
+    </style>
+</head>
+
+<body>
+	<!--Header area start here-->
+
+	<header id="sticky">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div class="main-menus">
+						<div class="col-md-2 col-sm-2 col-xs-12 pd-0">
+							<div class="logo">
+								<a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt=""/></a>
+							</div>
+						</div>
+
+						<div class="col-md-10 col-sm-9 pd-0 hidden-xs">
+                                <div class="menus menu_scroll">
+                                    <nav>
+                                        <ul>
+                                            <li><a href="{% url 'home' %}">Home</a></li>
+                                            <li><a href="#about_us">Who WE Are</a></li>
+                                            <li><a href="#FindSoulmate">Find  Soulmate</a></li>                                            
+                                            <li><a href="#gallery">Gallery</a></li>
+                                            <li><a href="#testimonials">Happy Couples</a></li>
+											<li><a href="#contact_us">Contact Us</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Responsive Menu area--> 
+
+                <div class="mobilemenu">
+                    <div class="mobile-menu menu_scroll visible-xs">
+                        <nav>
+                            <ul>
+                                <li><a href="http://abshaadi.com/">Home</a></li>
+                                <li><a href="#about_us">Who WE Are</a></li>
+                                <li><a href="#FindSoulmate">Find  Soulmate</a></li>                                
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="#testimonials">Happy Couples</a></li>
+                                <li><a href="#contact_us">Contact Us</a></li>
+								<li><a href="{% url 'login' %}">Login</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!--Responsive Menu area End-->
+
+            </div>
+        </header>
+        <!--Header area end here-->
+
+        <!--Slider araea start here-->
+        <section section-scroll='0' class="slider-area">
+            <div class="container-fluid">
+                <div class="row"> 
+                    <div class="col-md-12 col-sm-12 pd-0">
+                        <div class="sliders">
+                            <div class="slider-list">
+                                <div class="slider-img">
+                                    <figure>
+										<img src="{% static '/assets/images/sliders/1.jpg' %}" alt=""/>
+									</figure>
+                                </div>
+
+                                <div class="slider-con">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="content">
+                                                    <h2 class="wow animated fadeInDown" data-wow-duration="1s">Atut Bandhan Shaadi</h2>
+                                                    <p class="wow animated zoomIn" data-wow-duration="1.5s">
+														Hum Bandhan Nahi Sambandh Banate Hai
+													</p>
+                                                    <br>
+                                                    <div class="date wow animated zoomIn" data-wow-duration="1.5s" >
+                                                        <span class="wow animated fadeInUp" data-wow-duration="2s">
+															<a href="#contact_us" style="color:#FFF;">Contact Us</a>
+														</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider-list slid_two">
+                                <div class="slider-img">
+                                    <figure>
+										<img src="{% static '/assets/images/sliders/2.jpg' %}" alt=""/>
+									</figure>
+                                </div>
+                                <div class="slider-con">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="content">
+                                                    <h2 class="wow animated fadeInDown" data-wow-duration="1s">Atut Bandhan Shaadi</h2>
+                                                    <p class="wow animated zoomIn" data-wow-duration="1.5s">
+														Hum Bandhan Nahi Sambandh Banate Hai
+													</p>
+                                                    <br>
+                                                    <div class="date wow animated zoomIn" data-wow-duration="1.5s" >
+                                                        <span class="wow animated fadeInUp" data-wow-duration="2s">
+															<a href="#contact_us" style="color:#FFF;">Contact Us</a>
+														</span>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider-list slid_three">
+                                <div class="slider-img">
+                                    <figure>
+										<img src="{% static '/assets/images/sliders/3.jpg' %}" alt=""/>
+									</figure>
+                                </div>
+
+                                <div class="slider-con">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="content">
+                                                    <h2 class="wow animated fadeInDown" data-wow-duration="1s">Atut Bandhan Shaadi</h2>
+                                                    <p class="wow animated zoomIn" data-wow-duration="1.5s">
+														Hum Bandhan Nahi Sambandh Banate Hai
+													</p>
+                                                    <br>
+                                                    <div class="date wow animated zoomIn" data-wow-duration="1.5s" >
+                                                        <span class="wow animated fadeInUp" data-wow-duration="2s">
+															<a href="#contact_us" style="color:#FFF;">Contact Us</a>
+														</span>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Slider araea End here-->
+
+        <!--Guest area start here-->
+        <section id="about_us" class="guest_area_2 section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="section-heading">
+                            <h2>Atut Bandhan Shaadi</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-sm-5">
+                        <div class="guest-img">
+                            <figure>
+								<img src="{% static '/assets/images/banner/1.jpg' %}" alt=""/>
+							</figure>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7">
+                        <div class="guest-con">
+                            <h2>Hum Bandhan Nahi  <span>Sambandh Banate Hai.</span> </h2>
+                            <p>
+								We offer trusted & authentic matrimonial profiles for those who are looking for Indian brides and 
+								grooms for marriage. We understands the importance of choosing the right partner for marriage, 
+								especially in the Indian cultural setup. It believes in providing the most secure and convenient 
+								matchmaking experience to all its members by ensuring 100% screening,exclusive privacy options, 
+								photo protection features and verification of phone numbers and more information.
+							</p>
+                            <p class="mr-0">
+								Our team is committed to provide 360 degree solutions to all prospective Indian brides and grooms 
+								for marriage. We are technology driven company providing the best platform to those who are 
+								genuinely looking for their soul mates through matrimonial site. Our platform serves to all 
+								Indian communities in India.
+							</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Guest area end here-->
+
+
+        <!--Counter area start here-->
+        <section id="" class="counter_area_2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12 pd-0">
+                        <div class="count-con">
+                            <h2>Total Happy Couples</h2>
+                            <p>We are working from last 10 years in this fields..</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 col-md-offset-1">
+                        <div class="row" style="padding: 80px 0px; color:#FFF;">
+                            <div class="col-md-6 text-center p-5">
+                                <p class="count-circle">73+</p><br>
+                                <h3>Couples Got Engaged</h3>
+                            </div>
+                            <div class="col-md-6 text-center p-5">
+                                <p class="count-circle">3567+</p><br>
+                                <h3>Happy Married Couples</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Counter area end here-->
+        
+        <!--Rspv area start here-->
+        <section id="FindSoulmate"  section-scroll='7' class="rspv_area_2 section bg-img jarallax af">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="rspv-forms">
+                            <div class="header">
+                                <h2>Find Your<span>Perfact Soulmate!</span></h2>
+                            </div>
+                            <div class="row">
+                                <div id="find_msg_div"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Rspv area end here-->
+		 <!--gallery area start here-->
+
+        <section id="gallery" section-scroll='4' class="gallery_area_2 section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="section-heading">
+                            <p>COUPLES</p>
+                            <h2>Memorable Photo Gallery</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="gallery">
+                            <div class="col-md-12 col-sm-12 pd-0">                                
+                                <div class="col-md-12 col-sm-6 col-xs-12 pd-0"><div>						        
+									<div class="col-md-4 col-sm-6 col-xs-12 pd-0" style="height:250px;">
+										<figure style="padding:10px; width:100%; height:250px;">
+											<a href="{% static '/assets/images/gallery/1.jpg' %}">
+												<span><i class="fas fa-search"></i>
+												</span>
+												<img src="{% static '/assets/images/gallery/1.jpg' %}" alt=""/>
+											</a>
+										</figure>
+									</div>
+									<div class="col-md-4 col-sm-6 col-xs-12 pd-0">
+										<figure style="padding:10px; width:100%; height:auto;">
+											<a href="{% static '/assets/images/gallery/2.jpg' %}">
+												<span><i class="fas fa-search"></i></span>
+												<img class="img" src="{% static '/assets/images/gallery/2.jpg' %}" alt=""/>
+											</a>
+										</figure>
+									</div>
+									<div class="col-md-4 col-sm-6 col-xs-12 pd-0" style="height:250px;">
+										<figure style="padding:10px; width:100%; height:250px;">
+											<a href="{% static '/assets/images/gallery/1.jpg' %}">
+												<span>
+													<i class="fas fa-search"></i>
+												</span>
+												<img src="{% static '/assets/images/gallery/1.jpg' %}" alt=""/>
+											</a>
+										</figure>
+									</div>									
+								</div>
+							</div>
+						</div>
+					</div>
+							
+					<div class="col-md-12 col-sm-12 text-center">
+						<a href="#" class="btn1 mr-t60" style="margin-top:30px;">Load More</a>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--gallery area End here-->
+
+        <!--Blog area start here-->
+        <section id="testimonials" section-scroll='5' class="blog_area_2 section bg-img jarallax af">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="section-heading">
+                            <p>awaited moment</p>
+                            <h2>Happy Couples</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 pd-0">
+                        <div class="blog-slider">
+                            <div class="col-sm-12">
+                                <div class="blogs">
+                                    <figure>
+										<img src="{% static 'assets/images/blog/1.jpg' %}" alt=""/><h2>Raaj & Taniya</h2>
+									</figure>									
+                                    <div class="date">
+										<strong>27</strong>
+										<span>july</span>
+									</div>
+                                    <div class="content">
+                                        <p>
+											It is a long established fact that a reader will be distracted by the readable content 
+											of a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+											more-or-less normal dison of letters, as opposed to using. 
+										</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="blogs">
+                                    <figure>
+										<img src="{% static 'assets/images/blog/1.jpg' %}" alt=""/><h2>Raaj & Taniya</h2>
+									</figure>									
+                                    <div class="date">
+										<strong>27</strong>
+										<span>july</span>
+									</div>
+                                    <div class="content">
+                                        <p>
+											It is a long established fact that a reader will be distracted by the readable content 
+											of a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+											more-or-less normal dison of letters, as opposed to using. 
+										</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="blogs">
+                                    <figure>
+										<img src="{% static 'assets/images/blog/1.jpg' %}" alt=""/><h2>Raaj & Taniya</h2>
+									</figure>									
+                                    <div class="date">
+										<strong>27</strong>
+										<span>july</span>
+									</div>
+                                    <div class="content">
+                                        <p>
+											It is a long established fact that a reader will be distracted by the readable content 
+											of a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+											more-or-less normal dison of letters, as opposed to using. 
+										</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="blogs">
+                                    <figure>
+										<img src="{% static 'assets/images/blog/1.jpg' %}" alt=""/><h2>Raaj & Taniya</h2>
+									</figure>									
+                                    <div class="date">
+										<strong>27</strong>
+										<span>july</span>
+									</div>
+                                    <div class="content">
+                                        <p>
+											It is a long established fact that a reader will be distracted by the readable content 
+											of a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+											more-or-less normal dison of letters, as opposed to using. 
+										</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="blogs">
+                                    <figure>
+										<img src="{% static 'assets/images/blog/1.jpg' %}" alt=""/><h2>Raaj & Taniya</h2>
+									</figure>									
+                                    <div class="date">
+										<strong>27</strong>
+										<span>july</span>
+									</div>
+                                    <div class="content">
+                                        <p>
+											It is a long established fact that a reader will be distracted by the readable content 
+											of a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+											more-or-less normal dison of letters, as opposed to using. 
+										</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="blogs">
+                                    <figure>
+										<img src="{% static 'assets/images/blog/1.jpg' %}" alt=""/><h2>Raaj & Taniya</h2>
+									</figure>									
+                                    <div class="date">
+										<strong>27</strong>
+										<span>july</span>
+									</div>
+                                    <div class="content">
+                                        <p>
+											It is a long established fact that a reader will be distracted by the readable content 
+											of a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+											more-or-less normal dison of letters, as opposed to using. 
+										</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Blog area end here-->
+        
+        <!--Info area start here-->
+        <section id="contact_us" class="info_area_2 section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="info-list">
+                            <div class="ico">
+								<i class="fas fa-map-marker-alt"></i>
+							</div>
+                            <div class="content">
+                                <h4>
+									<b>Amit Trader's</b><br>Aliganj, Bousi Road<br>Bhagalpur(Bihar) India  - 812005
+								</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="info-list">
+                            <div class="ico">
+								<i class="fas fa-phone" ></i>
+							</div>
+                            <div class="content">
+                                <h4>+91 96935 05330<br>+91 9473408048</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="info-list">
+                            <div class="ico">
+								<i class="fas fa-envelope"></i>
+							</div>
+                            <div class="content">
+                                <h4>amit@abshaadi.com</h4>
+                                <h4>info@abshaadi.com</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Info area End here-->
+
+        <!--Contact area start here-->
+        <section section-scroll='6' class="contact_area_2 bg-img af jarallax section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="section-heading">
+                            <p>If Any Query</p>
+                            <h2>Contact Us</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 " style="padding-top:60px;">
+                        <div class="con-form">
+                            <div id="msg_div"></div>
+                            <form method="post" id="quick_contact_form" action="" onsubmit="return post();">
+                                <div class="col-sm-6">
+                                    <fieldset>
+										<input type="text" name="name" placeholder="Full Name" class="require">
+									</fieldset>
+                                    <fieldset>
+										<input type="Email" name="email" placeholder="Email" class="require" data-valid="email" data-error="Email should be valid.">
+									</fieldset>
+                                    <fieldset>
+										<input type="number" name="contact" placeholder="Phone" class="require">
+									</fieldset>
+                                </div>
+                                <div class="col-sm-6">
+                                    <fieldset>
+										<textarea name="msg" placeholder="Message" class="require"></textarea>
+									</fieldset>
+                                </div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="response response_2"></div>
+
+								</div>
+                                <div class="col-sm-12 text-center">
+									<button  class="submitForm btn1 mr-t50" form-type="contact">Send a Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 text-center">
+                    	<h2 style="color:#09C;">Founder</h2>
+                    	<img src="{% static 'assets/images/about/1.jpg' %}" class="card" style="width:70%; border:3px solid #FFF;    border-radius: 50%;">
+                        <h2 style="color:#FFF; margin-top:20px;">Amit Kumar</h2>
+                    </div>
+                </div>		
+            </div>
+        </section>
+
+        <!--Contact area end here-->
+
+        <!--Footer area start here-->
+        <footer class="home_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="copyright">
+                            <p><a href="/admin">Login</a> | @ Copyright 2019 All Rights Reserved. By Atut Bandhan Shaadi.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		
+		
+		
+		{% include 'app/modal_forms/login_modal.html' %}
+		{% include 'app/modal_forms/registration_modal.html' %}
+		
+		
+		
+
+        <!--Footer area end here-->
+
+		<!-- All JavaScript Here -->
+		<!-- jQuery latest version -->
+
+        <script src="{% static '/assets/js/vendor/jquery-3.2.1.min.js' %}"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+        <script src="{% static '/assets/js/bootstrap.min.js' %}"></script>
+
+        <!-- Owl.carousel JavaScript -->
+        <script src="{% static '/assets/js/owl.carousel.min.js' %}"></script>
+
+        <!-- Bxslider JavaScript -->
+        <script src="{% static '/assets/js/jquery.bxslider.min.js' %}"></script>
+
+        <!-- Magnific Popup JavaScript -->
+        <script src="{% static '/assets/js/jquery.magnific-popup.min.js' %}"></script>
+
+		<!-- meanmenu JavaScript -->
+        <script src="{% static '/assets/js/jquery.meanmenu.js' %}"></script>
+
+        <!-- jarallax JavaScript -->
+        <script src="{% static '/assets/js/jarallax.min.js' %}"></script>
+
+		<!-- jQuery-ui JavaScript -->
+        <script src="{% static '/assets/js/jquery-ui.min.js' %}"></script>
+
+        <!-- downCount JavaScript -->
+        <script src="{% static '/assets/js/jquery.downCount.js' %}"></script>
+
+		<!-- masonry JavaScript -->
+        <script src="{% static '/assets/js/masonry.pkgd.min.js' %}"></script>
+
+        <!-- wow JavaScript -->
+        <script src="{% static '/assets/js/wow.min.js' %}"></script>
+
+		<!-- Plugins JavaScript -->
+        <script src="{% static '/assets/js/plugins.js' %}"></script>
+
+		<!-- Init JavaScript -->
+        <script src="{% static '/assets/js/main.js' %}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+    
+
+        <script>
+		
+			$("#id_password1, #id_password2").addClass("form-control");
+			$("#id_email, #id_password1, #id_password2").val("");
+		
+			function ValidateEmail(elem){
+				if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(elem).val())){
+					return (true);
+				}
+				alert("You have entered an invalid email address!");
+				$(elem).focus();
+				return (false);
+			}
+		
+			
+			//***********************************************************************
+			// Match Two Strings
+			//***********************************************************************
+			//
+
+			function match_fields_data(input1, input2, elem=null){
+				
+				var field1 = $(input1).val();
+				var field2 = $(input2).val();
+				
+				if(field1 !== field2){		
+					if(elem) $(elem).text("Both fields should match. It is case-sensitive");
+					$(input1).addClass("is-invalid");
+					$(input2).addClass("is-invalid");
+					alert("Did not match");
+				}else{
+					$(input1).removeClass("is-invalid");
+					$(input2).removeClass("is-invalid");
+				}
+			}
+
+
+			//***********************************************************************
+			// Check Confirm Password
+			//***********************************************************************
+			//
+
+			$("#id_password2").on("focusout", function(){
+				
+				confirm_passwd = $(this).val();
+				main_passwd = $("#id_password1").val();
+					
+				if(confirm_passwd!=""){
+					if(main_passwd !== confirm_passwd){
+						$("#passwd1_error").text("Password and Confirm Password does not match");
+						$(".save_button").prop("disabled", true);
+					}else{
+						
+						if(main_passwd.length < 8){
+							$("#passwd1_error").text("This password must contain at least 8 characters.");
+						}else{
+							$("#passwd1_error").text("");		
+							$(".save_button").prop("disabled", false);
+							$(".error").text("");
+						}
+					}
+				}else{
+					$("#passwd1_error").text("Confirm Password is required.");
+				}
+			});
+
+
+			//***********************************************************************
+			// Validate Password
+			//***********************************************************************
+			//
+
+			$("#id_password1").on("focusout", function(){
+				passwd = $(this).val();
+				
+				if(passwd.length < 8){
+					$("#passwd1_error").text("This password must contain at least 8 characters.");
+				}else{
+					
+					confirm_passwd = $("#id_password2").val();
+					main_passwd = $("#id_password1").val();
+						
+					if(confirm_passwd!=""){
+						if(main_passwd !== confirm_passwd){
+							$("#passwd1_error").text("Password and Confirm Password does not match");
+							$(".save_button").prop("disabled", true);
+						}else{
+							
+							if(main_passwd.length < 8){
+								$("#passwd1_error").text("This password must contain at least 8 characters.");
+							}else{
+								$("#passwd1_error").text("");		
+								$(".save_button").prop("disabled", false);
+								$(".error").text("");
+							}
+						}
+					}else{
+						$("#passwd1_error").text("Confirm Password is required.");
+					}
+					
+					$("#passwd1_error").text("");		
+				}
+			});
+		
+			//***********************************************************************
+			// Open Login Modal
+			//***********************************************************************
+			
+			function openLogin(){
+				$("#loginModal").modal('hide');
+				$("#registrationModal").modal('hide');
+				$("#loginModal").modal('show');
+			}
+			
+			function login(){
+				
+				formdata = $("form#login-form").serialize();
+				
+				$.post('/login/', formdata, function(data){
+					if(data !='1'){
+						$("#message").removeClass("hide");
+						$("#message").empty().append(data);						
+					}else{
+						window.location = '{% url "my_redirect_page" %}';
+					}
+				});
+				
+			}
+			
+			//***********************************************************************
+			// Open Registration Modal
+			//***********************************************************************
+			//
+
+			function registration(){
+				$("#loginModal").modal('hide');
+				
+				$("#registrationModal").modal('show');
+			}
+		
+			function register_user(){
+				formdata = $("form#register-form").serialize();
+				
+				$.post('/registration/', formdata, function(data){
+					
+					data = $.parseJSON(data);
+					
+					if(data.code !='1'){
+						htm = '';
+					
+						$.each(data.error, function (key, val) {
+							htm +='<span class="display:block;">'+val+'</span>';
+						});
+					
+						$("#message2").removeClass("hide");
+						$("#message2").empty().append(htm);	
+						$(".save_button").prop("disabled", true);
+						
+					}else{
+						$("#message2").removeClass("hide");
+						$("#message2").empty().append("You registered successfully. Please Login");	
+					}
+				});
+			}
+		
+		
+			
+
+        </script>
+    </body>
+</html>
+

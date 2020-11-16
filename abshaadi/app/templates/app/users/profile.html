@@ -1,0 +1,241 @@
+{% load static %}
+<div class="row">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-8">
+				<div class="card-body">
+					<table class="table" style="border:none;">
+						<tr>
+							<td colspan="2" class="bg-success" style="color:#FFFFFF;">
+								<span style="font-weight:bold; display:inline-block; line-height:35px;">Package Name</span>
+								<button class="btn btn-sm" style="float:right; margin-right: -10px; margin-top: -1px; padding: 8px; background-color:#af27f5; color: #FFF;" data-toggle="modal" data-target="#packagesModal">
+									<i class="mdi mdi-square-inc-cash"></i> Upgrade
+								</button>
+								
+								<span style="font-size:11px; display:inline-block; float:right; text-align:right; margin-right:10px;">
+									Remaining Duration
+									<br/>1Year
+								</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="card-body">
+					<table class="table" style="border:none;">
+						<tr>
+							<td colspan="4" class="bg-info" style="color:#FFFFFF;">
+								Summary
+
+								<button class="btn btn-sm btn-warning" style="float:right; margin-right: -10px; margin-top:-3px" data-toggle="modal" data-target="#editProfile_summary_Modal">
+									<i class="mdi mdi-pencil"></i> Edit
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>{{ profile.descriptions }}</strong>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<div class="card-body">
+					<table class="table" style="border:none;">
+						<tr>
+							<td colspan="4" class="bg-info" style="color:#FFFFFF;">
+								My Personal Information
+
+								<button class="btn btn-sm btn-warning" style="float:right; margin-right: -10px; margin-top:-3px" data-toggle="modal" data-target="#editProfileModal">
+									<i class="mdi mdi-pencil"></i> Edit
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="text-align:right;">
+								<strong>Fullname</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.fullname }}
+							</td>
+							<td width="150px" style="text-align:right;">
+								<strong>Gender</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.get_gender_display }}
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>Looking For</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.get_looking_for_gender_display }}
+							</td>
+							<td style="text-align:right;">
+								<strong>Father's Name</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.father_name|default_if_none:'-' }}
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>Mother's Name</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.mother_name|default_if_none:'-' }}
+							</td>
+							<td style="text-align:right;">
+								<strong>Date Of Birth</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.dob|default_if_none:'-' }}
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>Religion</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.religion|default_if_none:'-' }}
+							</td>
+							<td style="text-align:right;">
+								<strong>Caste/Domination</strong>
+							</td>
+							<td><strong>:</strong> {{ profile.caste_creed|default_if_none:'-' }}</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>Phone/Mobile</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.phone_number|default_if_none:'-' }}
+							</td>
+							<td style="text-align:right;">
+								<strong>Alternative Phone</strong>
+							</td>
+							<td><strong>:</strong> {{ profile.phone_number_alternative|default_if_none:'-' }}</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>Address</strong>
+							</td>
+							<td colspan="3">
+								<strong>:</strong> {{ profile.address|default_if_none:'-' }}
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>Country</strong>
+							</td>
+							<td colspan="3">
+								<strong>:</strong> {{ profile.country |default_if_none:'-' }}
+								
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>State</strong>
+							</td>
+							<td colspan="3">
+								<strong>:</strong> {{ profile.state|default_if_none:'-' }}
+								
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>City</strong>
+							</td>
+							<td colspan="3">
+								<strong>:</strong> 
+								{{ profile.city |default_if_none:'-' }}
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="card-body">
+					<table class="table" style="border:none;">
+						<tr>
+							<td colspan="6" class="bg-info" style="color:#FFFFFF;">
+								Other Details
+
+								<button class="btn btn-sm btn-warning" style="float:right; margin-right: -10px; margin-top:-3px" data-toggle="modal" data-target="#edit_other_form_modal">
+									<i class="mdi mdi-pencil"></i> Edit
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="text-align:right;">
+								<strong>Height</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.height|default_if_none:'-' }}
+							</td>
+							<td style="text-align:right;">
+								<strong>Weight</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.weight|default_if_none:'-' }}
+							</td>
+							<td style="text-align:right;">
+								<strong>Complexion</strong>
+							</td>
+							<td>
+								<strong>:</strong> {{ profile.complexion|default_if_none:'-' }}
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>Educational Qual.</strong>
+							</td>
+							<td colspan="5">
+								<strong>:</strong> {{ profile.qualification|default_if_none:'-' }}
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:right;">
+								<strong>Job Details</strong>
+							</td>
+							<td colspan="5">
+								<strong>:</strong> {{ profile.job_details|default_if_none:'-' }}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card-header card-header-border">
+					<strong>My Pics</strong>
+					<a href="#" data-toggle="modal" data-target="#profile_picture_modal">
+												<span class="mdi mdi-camera"></span> &nbsp; Add Picture
+											</a>
+				</div>
+				<div class="card-body card-body-border" style="min-height:150px;">
+					<div class="row" style="padding:10px">
+						{% for pics in gallery %}
+							<div class="col-4" style="padding:10px">
+								<img src="{% get_media_prefix %}{{pics.picture}}" class="img" width="100%" height="auto">
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+
+				<!-- Filters -->
+
+				{% include 'app/html_components/side_search_filters.html' %}
+
+			</div>
+		</div>
+	</div>
+</div>
+{% include 'app/modal_forms/profile_picture_modal.html' %}
+{% include 'app/modal_forms/edit_profile_modal.html' %}
+{% include 'app/html_components/packages_list.html' %}
+<script>
+
+var csrfmiddlewaretoken = '{{ csrf_token }}';
+
+</script>

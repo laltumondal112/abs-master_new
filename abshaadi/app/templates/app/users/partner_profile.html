@@ -1,0 +1,155 @@
+{% load static %}
+<div class="row">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-8 col-sm-12 col-sx-12">
+				<div class="card-header card-header-border">
+					<strong style="margin-left:-10px;">Profile Details</strong>	
+					<button type="button" class="btn btn-sm btn-warning" style="width:80px; float:right; margin-top: -4px; margin-right: -10px;">
+						Shortlist
+					</button>
+					<button type="button" class="btn btn-sm btn-warning" style="width:80px; float:right; margin-top: -4px; margin-right: -10px;">
+						Message
+					</button>
+				</div>
+				<div class="card-body card-body-border">
+					<div class="row">
+						<div class="col-md-3 col-sm-6 col-sx-12">
+							{% if my_profile_pic is not None %}
+								<img src="{% get_media_prefix %}{{my_profile_pic.picture}}" class="img" width="100%" height="auto">
+							{% else %}
+								<img class="img" src="{% static 'images/user.png' %}" width="100%" height="auto">
+							{% endif %}
+						</div>
+						<div class="col-md-9 col-sm-6 col-sx-12" style="padding:10px;">
+							<span style="display:block; margin-bottom:0px; padding-bottom:0px; font-weight:bolder; font-size:110%">{{my_profile.user.first_name}} {{my_profile.user.last_name}} ({{my_profile.uid}})</span>
+							{% if my_profile.user.online_now %}
+							<span style="font-size: 80%; background-color: #34c138; color: #FFFFFF; padding: 3px 10px; display: inline-block; line-height: 17px;">
+								<i class="mdi mdi-comment-check" style="font-size:120%;"></i> Online now							
+							</span>
+							{% else %}
+							<span style="font-size: 80%; background-color: #f73232; color: #FFFFFF; padding: 3px 10px; display: inline-block; line-height: 17px;">
+								<i class="mdi mdi-comment-alert" style="font-size:120%;"></i> Offline now							
+							</span><br>							
+							<span style="display:inline-block; font-size:80%;"><strong>Last Logged On:</strong> {{my_profile.user.last_login|date:'d M,Y H:i'}}</span>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-sx-12">
+				<div class="card-header card-header-border">
+					<strong style="margin-left:-10px;">Partner Pics</strong>			
+				</div>
+				<div class="card-body card-body-border">
+					dfsda
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div class="row">
+	<div class="col-md-12" style="margin-top:10px;">	
+		<div class="row">
+			<div class="col-md-8 col-sm-12 col-sx-12">
+				<div class="card-header card-header-border" style="background-color:#8812e2; color:#FFFFFF;">
+					<strong style="margin-left:-10px;">Personal Details</strong>
+				</div>
+				<div class="card-body card-body-border">
+					<div class="row">
+						<div class="col-md-12" style="padding: 10px 20px;">
+							<span style="font-weight:bold; display:block; color:#FF0000; border-bottom:1px solid #FF0000; padding-bottom: 10px;">
+								About Me								
+							</span>
+							<p style="padding:10px 0px 0px 0px;">{{my_profile.descriptions}}</p>
+						</div>
+						<div class="col-md-12" style="padding: 0px 20px 15px 20px;">
+							<span style="font-weight:bold; display:block; color:#FF0000; border-bottom:1px solid #FF0000; padding-bottom: 10px;">
+								Family & Background							
+							</span>
+							<div style="padding-top:10px">
+								<span style="display:block">
+									<label style="width:150px">Fullname</label>: 
+									{{my_profile.fullname|default_if_none:""}} 	
+								</span>
+								<span style="display:block">
+									<label style="width:150px">Father's Name</label>: 
+										{{my_profile.father_name|default_if_none:""}}
+										{% if my_profile.father_job is not None %} (<strong>{{my_profile.father_job}}</strong>) {% endif %}		
+								</span>
+								<span style="display:block">
+									<label style="width:150px">Mother's Name</label>: 
+										{{my_profile.mother_name|default_if_none:""}}
+										{% if my_profile.mother_job is not None %} (<strong>{{my_profile.mother_job}}</strong>) {% endif %}		
+								</span>
+								<span style="display:block">
+									<label style="width:150px">Siblings</label>: 
+										
+										{% if my_profile.siblings is not None %}										
+											{{my_profile.siblings}} sibling/s, 
+											
+											{% if my_profile.sibling_elder is not None %}
+												{{ my_profile.sibling_elder }} elder,
+											{% endif %}
+											
+											{% if my_profile.sibling_younger is not None %}
+												{{ my_profile.sibling_younger }} younger
+											{% endif %}
+											
+											{% if my_profile.sibling_male is not None %}
+												{{my_profile.sibling_male}} brother/s,
+											{% endif %}
+											
+											{% if my_profile.sibling_female is not None %}
+												{{my_profile.sibling_female}} sister/s,
+											{% endif %}
+											
+											{% if my_profile.sibling_married is not None %}
+												{{my_profile.sibling_married}} married,
+											{% endif %}
+											
+										{% else %} 0
+										{% endif %}	
+									
+								</span>
+							</div>
+						</div>
+						<div class="col-md-12" style="padding: 0px 20px;">
+							<span style="font-weight:bold; display:block; color:#FF0000; border-bottom:1px solid #FF0000; padding-bottom: 10px;">
+								Religion, Caste/Denominations								
+							</span>
+							<p style="padding:10px 0px 5px 0px;">{{my_profile.religion}}, {{my_profile.caste_creed}}</p>
+						</div>			
+						<div class="col-md-12" style="padding: 0px 20px;">
+							<span style="font-weight:bold; display:block; color:#FF0000; border-bottom:1px solid #FF0000; padding-bottom: 10px;">
+								Education, Qualifications & Job Details							
+							</span>
+							<p style="padding:10px 0px 5px 0px;">
+								{% if my_profile.job_details is not None %}
+									{{my_profile.job_details}},
+								{% endif %}
+								{% if my_profile.qualification is not None %}
+									{{my_profile.qualification}}
+								{% endif %}
+								
+							</p>
+						</div>	
+						<div class="col-md-12" style="padding: 0px 20px;">
+							<span style="font-weight:bold; display:block; color:#FF0000; border-bottom:1px solid #FF0000; padding-bottom: 10px;">
+								Partner Preference								
+							</span>
+							<p style="padding:10px 0px 5px 0px;">{{my_profile.partner_preference}}</p>
+						</div>							
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-8 col-sm-12" style="margin-top:5px;">	
+		{% include 'app/html_components/latest_matches.html' %}
+	</div>
+</div>

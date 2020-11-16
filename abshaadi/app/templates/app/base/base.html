@@ -1,0 +1,306 @@
+{% load static %}
+{% load common_filters %} 
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <title></title>
+    <!-- Custom CSS -->
+    
+    <!-- Custom CSS -->
+    <link href="{% static 'base_files/css/style.min.css' %}" rel="stylesheet">
+	<link href="{% static 'custom_files/css/custom.css' %}" rel="stylesheet">
+	<link href="{% static 'custom_files/css/bootstrap-select.css' %}" rel="stylesheet">
+	<link href="{% static 'custom_files/css/nouislider.css' %}" rel="stylesheet">
+	
+	
+	{% load_css_files css_files %}
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" style="background-color:#2ca0f1;">
+            <nav class="navbar top-navbar navbar-expand-md">
+                <div class="navbar-header">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+						<i class="ti-menu ti-close"></i>
+					</a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.html" style="background-color:#36a7f7; text-align:center">                        
+                        <span class="logo-text text-center">
+                             <!-- dark Logo text -->
+                             <img src="{% static 'images/logo.png' %}" style="width:90%; height:50px;" alt="homepage" class="light-logo" />
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a style="color:#FFFFFF;" class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent_1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<i class="ti-more"></i>
+					</a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent_1" style="background-color:#2ca0f1;">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block">
+							<a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar" style="color:#FFFFFF;">
+								<i class="mdi mdi-menu font-24"></i>
+							</a>
+						</li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        
+						<i  data-toggle="modal" data-target="#change_password_modal" title="Change Password" style="cursor:pointer; text-decoration:none; color:#FFFFFF; margin-right: 15px; margin-top: 3px;" class="fa fa-key m-r-5 m-l-5"></i>
+						
+						<a style="text-decoration:none; color:#FFFFFF" href="{% url 'logout' %}">
+							<i class="fa fa-power-off m-r-5 m-l-5"></i>
+						</a>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" style="background-color:#2ca0f1;">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        	
+						{% if not request.user.is_superuser or not request.user.is_staff %}
+							<li class="sidebar-item"> 
+								<a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard' %}" aria-expanded="false">
+									<i class="mdi mdi-view-dashboard"></i>
+									<span class="hide-menu">Dashboard</span>
+								</a>
+							</li>
+							<li class="sidebar-item"> 
+								<a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'user_profile' %}" aria-expanded="false">
+									<i class="mdi mdi-view-dashboard"></i>
+									<span class="hide-menu">My Profile</span>
+								</a>
+							</li>
+							
+							<li class="sidebar-item"> 
+								<a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+									<i class="mdi mdi-receipt"></i>
+									<span class="hide-menu">Message Center</span>
+								</a>
+								<ul aria-expanded="false" class="collapse first-level">
+									<li class="sidebar-item">
+										<a href="" class="sidebar-link">
+											<i class="mdi mdi-note-outline"></i>
+											<span class="hide-menu"> Inbox </span>
+										</a>
+									</li>
+									<li class="sidebar-item">
+										<a href="" class="sidebar-link">
+											<i class="mdi mdi-note-plus"></i>
+											<span class="hide-menu"> Sent </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+						{% else %}
+						
+							<li class="sidebar-item"> 
+								<a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'staff_dashboard' %}" aria-expanded="false">
+									<i class="mdi mdi-view-dashboard"></i>
+									<span class="hide-menu">Dashboard</span>
+								</a>
+							</li>
+							<li class="sidebar-item"> 
+								<a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'staff_package_management_view' %}" aria-expanded="false">
+									<i class="mdi mdi-view-dashboard"></i>
+									<span class="hide-menu">Package Management</span>
+								</a>
+							</li>
+							<li class="sidebar-item"> 
+								<a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+									<i class="mdi mdi-receipt"></i>
+									<span class="hide-menu">User Management</span>
+								</a>
+								<ul aria-expanded="false" class="collapse first-level">
+									<li class="sidebar-item">
+										<a href="{% url 'user_management_view' %}" class="sidebar-link">
+											<i class="mdi mdi-note-outline"></i>
+											<span class="hide-menu"> Users </span>
+										</a>
+									</li>
+									<li class="sidebar-item">
+										<a href="{% url 'staff_management_view' %}" class="sidebar-link">
+											<i class="mdi mdi-note-plus"></i>
+											<span class="hide-menu"> Staff </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="sidebar-item"> 
+								<a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+									<i class="mdi mdi-receipt"></i>
+									<span class="hide-menu">Site Management</span>
+								</a>
+								<ul aria-expanded="false" class="collapse first-level">
+									<li class="sidebar-item">
+										<a href="{% url 'religion_management' %}" class="sidebar-link">
+											<i class="mdi mdi-note-outline"></i>
+											<span class="hide-menu"> Religion/Caste </span>
+										</a>
+									</li>
+									<li class="sidebar-item">
+										<a href="{% url 'add_countries_to_db' %}" class="sidebar-link">
+											<i class="mdi mdi-note-plus"></i>
+											<span class="hide-menu"> Countries/States </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						
+						{% endif %}
+						
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+             <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">{{page_title}}</h4>
+                        <div class="ml-auto text-right">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{page_title}}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                {% include included_template %}
+				{% include 'app/base/password_modal.html' %}
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                All Rights Reserved by JDSS. Developed by JDSS</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+			
+		
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+	
+    <script src="{% static 'base_files/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'base_files/assets/libs/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'base_files/assets/libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'base_files/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script src="{% static 'base_files/assets/extra-libs/sparkline/sparkline.js' %}"></script>
+	
+	<!-- -->
+	
+	<script src="{% static 'custom_files/js/bootstrap-select.js' %}"></script>
+	
+	<!--Wave Effects -->
+    <script src="{% static 'base_files/js/waves.js' %}"></script>
+    <!--Menu sidebar -->
+    <script src="{% static 'base_files/js/sidebarmenu.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'base_files/js/custom.min.js' %}"></script>
+	<script src="{% static 'custom_files/js/wNumb.min.js' %}"></script>
+	<script src="{% static 'custom_files/js/nouislider.min.js' %}"></script>
+	<script src="{% static 'custom_files/js/common.js' %}"></script>
+	
+	
+	
+	
+    {% load_javascript_files js_files %} 
+</body>
+
+</html>

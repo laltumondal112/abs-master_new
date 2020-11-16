@@ -1,0 +1,54 @@
+{% load static %}
+<div class="row">
+	<div class="col-md-9 col-sm-12 col-xs-12">
+		<div class="card-header card-header-border" style="margin-top:10px;">
+			<strong style="margin-left:-10px;">Search Results</strong>			
+		</div>
+		
+		
+		<div class="card-body card-body-border" style="font-size:10px;">
+			<div class="row" style="padding:10px;">
+				{% for row in search_results %}
+					<div class="col-md-3 col-sm-6 col-xs-12" style="padding:5px 10px 0px 10px;">
+						<div class="card card-body-border">
+							<img class="img" src="{% static 'images/user.png' %}" height="175px">
+							<div style="padding:2px 8px">
+								<label style="font-size:13px; display:block; margin-bottom:20px;">
+									<span style="float:left; display:inline-block;">{{row.fullname}}</span>
+									<span style="float:right; display:inline-block;"> ({{row.age}} yrs)</span>								
+								</label>
+								<label style="font-size:13px; display:block; line-height:30px; margin-bottom: 0px;">
+									{{row.city}} - {{row.country}}
+								</label>
+							</div>
+							<div style="padding:4px; padding-top:0px; margin-top: -5px;" class="col-md-12 text-center">							
+								<button type="button" class="btn bg-dark-green btn-sm" style="width: 80px" onclick="open_connect_modal({{row.user}})">
+									<i class="mdi mdi-comment"></i> Connect
+								</button>
+								<button type="button" class="btn bg-dark-red btn-sm" style="width: 80px" onclick="profile_like({{row.user}})" {% if row.profile_counter %} disabled {% endif %} >
+									<i class="mdi mdi-heart"></i> Like
+								</button>
+							</div>
+							<div style="padding:6px; padding-top:0px;" class="col-md-12 text-center">
+								<a href="{% url 'partner_profile' row.user %}" target="_blank" class="btn btn-sm" style="width: 100%; background-color:#7c6cb9; color:#FFFFFF;">
+									<i class="mdi mdi-eye"></i> View
+								</a>
+							</div>	
+						</div>
+					</div>	
+				{% endfor %}				
+			</div>	
+			
+			<div class="col-md-12 text-center" style="padding-bottom:10px;">
+				<button class="btn btn-warning">Load More</button>
+			</div>
+			
+		</div>
+	</div>
+	<div class="col-md-3 col-sm-12 col-xs-12">
+		{% include 'app/html_components/side_search_filters.html' %}
+	</div>
+</div>	
+
+{% include 'app/base/uploader_gif_modals.html' %}
+{% include 'app/modal_forms/connect_modal.html' %}

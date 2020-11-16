@@ -1,0 +1,62 @@
+{% load static %}
+
+<!-- Image Upoader Modal -->
+
+<div class="modal" tabindex="-1" role="dialog" id="file_uploading_loader_modal" data-backdrop="static" style="background-color:#FFF;">
+    <div class="modal-dialog  modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Uploading Profile Picture</h5>
+			</div>
+            <div class="modal-body">
+				<img class="img" style="width: auto;  height: 200px;" src="{% static 'images/uploader_gifs/file_uploading.gif' %} ">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="data_process_modal" data-backdrop="static" style="background-color:#FFF;">
+    <div class="modal-dialog  modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+			<div class="modal-header bg-success">
+				<h5 class="modal-title" style="color:#FFFFFF;">Processing...</h5>
+			</div>
+            <div class="modal-body text-center">
+				<img class="img" style="width: auto;  height: 200px;" src="{% static 'images/uploader_gifs/gears.gif' %} ">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="error_modal" data-backdrop="static" style="background-color:#FFF;">
+    <div class="modal-dialog  modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+			<div class="modal-header bg-success">
+				<h5 class="modal-title" style="color:#FFFFFF;">Errors</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+            <div class="modal-body text-center">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="saved_msg_modal" data-backdrop="static" style="background-color:#FFF;">
+    <div class="modal-dialog  modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+			<div class="modal-header bg-success">
+				<h5 class="modal-title" style="color:#FFFFFF;">Data Saved</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity: 1;">
+					<span aria-hidden="true" style="color:#FFFFFF;">&times;</span>
+				</button>
+			</div>
+            <div class="modal-body text-center" style="padding:0px;">
+				<img  class="img" style="width: auto;  height: 140px;" src="{% static 'images/uploader_gifs/success_icon2.gif' %} ">
+			</div>
+		</div>
+	</div>
+</div>
