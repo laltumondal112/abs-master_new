@@ -67,6 +67,8 @@ urlpatterns += [
     path('profile/', never_cache(login_required(profiles_filters.UserProfileView.as_view())), name="user_profile"),
     path('edit_personal_info/', never_cache(login_required(profiles_filters.edit_personal_info)), name="edit_personal_info"),
     path('upload_profile_pic/', never_cache(login_required(profiles_filters.upload_profile_pic)), name="upload_profile_pic"),
+    path('upload_picture/', never_cache(login_required(profiles_filters.upload_profile_pic)), name="upload_picture"),
+    path('Pay/', never_cache(login_required(profiles_filters.Pay)), name="Pay"),
     path('edit_other_detalis/', never_cache(login_required(profiles_filters.edit_other_detalis)), name="edit_other_detalis"),
     path('edit_summary_detalis/', never_cache(login_required(profiles_filters.edit_summary_detalis)), name="edit_summary_detalis"),
 ]

@@ -57,7 +57,7 @@
 								<strong>Fullname</strong>
 							</td>
 							<td>
-								<strong>:</strong> {{ profile.fullname }}
+								<strong>:</strong> {{ profile.fullname |title}}
 							</td>
 							<td width="150px" style="text-align:right;">
 								<strong>Gender</strong>
@@ -234,8 +234,4 @@
 {% include 'app/modal_forms/profile_picture_modal.html' %}
 {% include 'app/modal_forms/edit_profile_modal.html' %}
 {% include 'app/html_components/packages_list.html' %}
-<script>
-
-var csrfmiddlewaretoken = '{{ csrf_token }}';
-
-</script>
+{% include 'app/modal_forms/picture_modal.html' %}

@@ -43,7 +43,7 @@ class ProfilePicturesForm(ModelForm):
 
 
 #******************************************************************************
-# PROFILE FORM
+# PROFILE FORM ,'country','state','city'
 #******************************************************************************
 
 class ProfileForm(ModelForm):

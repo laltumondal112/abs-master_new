@@ -23,6 +23,22 @@ import json
 
 from app.helpers import *
 
+
+
+
+
+
+import razorpay
+from django.views.decorators.csrf import csrf_exempt
+
+
+
+    # return render(request, 'index.html')
+
+# @csrf_exempt
+# def success(request):
+#     return render(request, "success.html")
+
 #******************************************************************************
 # USER PROFILE VIEW
 #******************************************************************************
@@ -84,7 +100,7 @@ class UserProfileEdit(View):
 
     data = defaultdict()
 
-    data["included_template"] = 'app/users/profile.html'
+    data["included_template"] = 'i'
 
 
     data["page_title"] = "My Profile"
@@ -136,6 +152,23 @@ def upload_profile_pic(request):
 
         return HttpResponse('1')
 
+def upload_picture(request):
+    
+    if request.method == 'POST' and request.FILES['picture']:
+
+        files = request.FILES
+
+        ProfilePictures.objects.filter(user = request.user).update(set_as_profile_pic = True)
+
+        profile_pic = ProfilePictures(
+                picture = request.FILES['picture'],
+                user = request.user,
+                set_as_profile_pic = False,
+            )
+
+        profile_pic.save()
+
+        return HttpResponse('1')
 
 #******************************************************************************
 # EDIT PERSONAL INFO
@@ -442,3 +475,16 @@ def partner_profile_view(request, user_id=None):
         return render(request, template_name, data)
 
     return redirect('/page_403/')
+
+
+
+def Pay(request):
+    # if request.method == "POST":
+    # name = request.POST.get('name')
+    amount = 50000
+
+    client = razorpay.Client(
+        auth=("rzp_test_fX14iX9W836UYH", "Uqqe2Yg8D0WplUagwBygQwXG"))
+
+    payment = client.order.create({'amount': amount, 'currency': 'INR',
+                                       'payment_capture': '1'})

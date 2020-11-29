@@ -131,3 +131,13 @@ LOGIN_URL = '/login/'
 LOGOUT_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = 'app.CustomUser'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'vijaymondal112@gmail.com'
+EMAIL_HOST_PASSWORD ='laltumondal1992'
+EMAIL_PORT = 587
+APPLICATION_EMAIL = 'Abisaadi<vijaymondal112@gmail.com>'
+DEFAULT_FROM_EMAIL = 'Abisaadi<vijaymondal112@gmail.com>'

@@ -24,7 +24,9 @@ from app.models import *
 
 from django.contrib.auth.signals import user_logged_out
 from django.dispatch import receiver
-
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
+from django.conf import settings
 
 #******************************************************************************
 # LOGOUT SIGNALS
@@ -173,6 +175,11 @@ def register_form(request):
                     )
 
                     profile.save()
+                    cus = CustomUser.objects.get(email = email)
+                    pr=Profile.objects.get(user_id=cus.pk)
+                    abisaadi_id=pr.uid
+                    print(pr.uid)
+                    send_email_from_app(email,abisaadi_id)
 
                     return HttpResponse(json.dumps({'code':'1', 'error':''}))
 
@@ -182,6 +189,24 @@ def register_form(request):
 
         else:
             return HttpResponse("Email cannot be blank")
+
+
+def send_email_from_app(email,id):
+    html_tpl_path = 'app/users/welcome.html'
+    # pr=Profile.objects.get(user=request.user)
+    context_data =  {'Email': email,'Abisaadi_id':id}
+    email_html_template = get_template(html_tpl_path).render(context_data)
+    receiver_email = email
+    email_msg = EmailMessage('Welcome from ATUT BANDHAN SHAADI', 
+                                email_html_template, 
+                                settings. APPLICATION_EMAIL,
+                                [receiver_email],
+                                reply_to=[settings.APPLICATION_EMAIL]
+                                )
+    # this is the crucial part that sends email as html content but not as a plain text
+    email_msg.content_subtype = 'html'
+    email_msg.send(fail_silently=False)
+
 
 #======================================================================
 # Change Password

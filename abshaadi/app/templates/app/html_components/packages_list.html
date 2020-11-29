@@ -1,21 +1,31 @@
 <div class="modal" tabindex="-1" role="dialog" id="packagesModal" style="background-color:#464e4ec2;" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-lg" role="document">
+    
       <div class="modal-content">
+      
           <div class="modal-header">
             <h5 class="modal-title">Upgrade Package</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          
           <div class="modal-body" style="font-size:80%">
             <div class="row">
-              {% for package in packages_list %}
+            <form class="text-center border border-light p-5" action="{% url 'Pay' %}" method="POST">
+            {% for package in packages_list %}
+            
+            {% csrf_token %}
+
+              
                 <div class="col-md-4 col-sm-12">
                   <div class="card" style="color:#FFF; background-color:#1f5f77;">
                     <div class="card-header">
                       <i class="mdi mdi-trophy mdi-24px" style="color:#ffd402"></i>
                       <span style="margin-top: 8px; position: absolute; line-height: 20px; display: inline; font-size: 17px; margin-left: 10px;">{{package.package_name}}</span>
-                      <i class="mdi mdi-cart mdi-24px" style="color: #ffd402; float: right; background-color: #09353c; padding: 0px 6px; border-radius: 100%; margin-top: -1px; cursor: pointer;"></i>
+                      <input type="submit" value="Pay with Razorpay" class="razorpay-payment-button">
+                      <i class="mdi mdi-cart mdi-24px" data-buttontext="Pay with Razorpay" style="color: #ffd402; float: right; background-color: #09353c; padding: 0px 6px; border-radius: 100%; margin-top: -1px; cursor: pointer;"></i>
+                      
                     </div>
                     <div class="card-body" style="color:#FFF; background-color:#1f5f77; height:300px; overflow:auto; padding:10px 22px;">
                       {{package.description}}
@@ -26,9 +36,20 @@
                     </div>
                   </div>
                 </div>
+                
               {% endfor %}
+              
+              <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_fX14iX9W836UYH"
+            data-amount="50000" data-currency="INR" data-order_id="{{payment.id}}" data-buttontext="Pay with Razorpay"
+            data-name="Professional Cipher" data-description="Django and Data Science"
+            data-image="https://example.com/your_logo.jpg" data-prefill.name="PC" data-prefill.email="pc@studygyaan.com"
+            data-theme.color="#F37254">
+            </script>
+            </form>
             </div>
           </div>
+          
         </div>
+        
     </div>
 </div>
